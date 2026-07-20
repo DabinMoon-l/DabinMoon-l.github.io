@@ -1,20 +1,8 @@
 export default function Footer() {
   return (
     <footer className="relative flex min-h-svh flex-col items-center justify-center bg-ink px-6 py-24 text-center">
-      <p className="chapter-tag" data-reveal>
-        The End
-      </p>
-      <p className="display mt-8 text-6xl text-white md:text-8xl" data-reveal>
-        See You
-        <br />
-        Around
-      </p>
-      <p className="mt-6 text-lg font-bold tracking-[0.3em] text-orange-400" data-reveal>
-        DATTEBAYO
-      </p>
-
       {/* 크레딧 — 만든 사람들 */}
-      <div className="mt-16 w-full max-w-md border-t border-white/15 pt-10" data-reveal>
+      <div className="w-full max-w-md" data-reveal>
         <p className="text-[0.62rem] tracking-[0.3em] text-white/45">CREATED BY</p>
         <p className="display mt-4 text-2xl text-white">
           <a
@@ -47,7 +35,7 @@ export default function Footer() {
       </div>
 
       <p className="mt-12 text-[0.7rem] font-bold tracking-[0.22em] text-white/50" data-reveal>
-        MOON DABIN · EST. 2004.01.01 · EDITIONS WINTER &#39;26
+        MOON DABIN · EDITIONS SUMMER &#39;26
       </p>
     </footer>
   );

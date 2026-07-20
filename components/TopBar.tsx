@@ -5,7 +5,7 @@ export default function TopBar() {
       <div className="flex items-center justify-between px-6 py-4 md:px-10">
         <div className="flex items-center gap-8">
           <span className="text-[0.8rem] font-bold tracking-[0.06em] text-white">
-            Moon Dabin <span className="font-semibold text-white/60">Editions Winter &#39;26</span>
+            Moon Dabin <span className="font-semibold text-white/60">Editions Summer &#39;26</span>
           </span>
           <nav className="hidden gap-6 text-[0.76rem] font-bold text-white/80 md:flex">
             <a href="#naruto" className="hover:text-white">Chapters</a>

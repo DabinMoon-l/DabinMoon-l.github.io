@@ -145,7 +145,7 @@ export default function Hero() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="hero-box-wrap pointer-events-auto w-[min(90vw,460px)] border border-white/70 bg-black/30 px-8 py-10 text-center backdrop-blur-[2px]">
             <p className="text-[0.66rem] font-bold tracking-[0.3em] text-white/70">
-              MOON DABIN EDITIONS — WINTER &#39;26
+              MOON DABIN EDITIONS — SUMMER &#39;26
             </p>
             <h1 className="display mt-6 text-6xl leading-[0.9] text-white md:text-7xl">
               Moon
