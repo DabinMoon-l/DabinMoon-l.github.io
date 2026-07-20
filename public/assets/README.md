@@ -14,7 +14,7 @@
 | `sasuke-itachi` | 사스케 & 이타치 | 이마 콩 장면 |
 | `kakashi` | 카카시 혼자 | 책 읽는 장면 |
 | `sirat` | 시라트 (Sirât) | 포스터 or 사막 스틸 |
-| `spiderman` | 어메이징 스파이더맨 | 다리 장면 스틸 (선택) |
+| `spider-bridge` | ⭐ 어메이징 스파이더맨 2 다리 장면 스틸 | 그 장면 화면 캡처 그대로 (가로로 넓은 컷 추천) — 이 위에 거미줄 글씨가 그려짐 |
 | `harry` | 해리 스타일스 | Coming Up Roses 시절 |
 | `jay` | 엔하이픈 제이 | No Doubt 뮤비 착장 |
 | `sunghoon` | 엔하이픈 성훈 | No Doubt 뮤비 착장 |
