@@ -19,22 +19,28 @@ export default function People() {
           <span className="float-mid absolute left-[20%] top-[80%] h-2.5 w-2.5 rounded-full bg-rose-200/70" />
         </div>
         <p className="chapter-tag" data-reveal>
-          Harry Styles
+          My favorite artist
         </p>
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
-          Coming Up Roses
+          Harry Styles
         </h3>
-        <p className="mt-4 text-lg font-bold text-rose-300" data-reveal>
-          My favorite song of all.
-        </p>
         <div className="mt-10 w-full max-w-sm" data-parallax="0.12">
-          <Figure name="harry" label="Harry Styles — cutout / album art" ratio="1 / 1" />
+          <Figure name="harry" label="Harry Styles — cutout PNG" ratio="3 / 4" />
         </div>
         <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
-          A song about how something doesn&#39;t have to last forever to be
-          special. The whole album runs and dances — then pauses to breathe
-          right here. That pause is my favorite moment.
+          The artist I always come back to. The voice, the style,
+          the way every album becomes a whole world of its own.
         </p>
+        {/* 최애곡 — 부가 정보 칩 */}
+        <div
+          className="mt-6 inline-flex items-center gap-3 rounded-full border border-rose-300/40 bg-black/30 px-5 py-2.5"
+          data-reveal
+        >
+          <span className="h-2 w-2 rounded-full bg-rose-400" />
+          <span className="text-[0.7rem] font-bold tracking-[0.2em] text-rose-200">
+            FAVORITE TRACK · COMING UP ROSES
+          </span>
+        </div>
       </div>
 
       {/* 3-2. 엔하이픈 제이 & 성훈 — No Doubt */}

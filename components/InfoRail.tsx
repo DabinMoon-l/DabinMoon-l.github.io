@@ -25,7 +25,7 @@ export default function InfoRail() {
       <ul className="pointer-events-auto mt-5 space-y-1 text-[0.7rem] font-bold tracking-[0.14em] text-white/70">
         <li><a href="#naruto" className="hover:text-orange-400">NARUTO</a> <span className="ml-1 text-white/40">I</span></li>
         <li><a href="#movies" className="hover:text-orange-400">CINEMA</a> <span className="ml-1 text-white/40">II</span></li>
-        <li><a href="#people" className="hover:text-orange-400">PEOPLE &amp; MUSIC</a> <span className="ml-1 text-white/40">III</span></li>
+        <li><a href="#people" className="hover:text-orange-400">PEOPLE</a> <span className="ml-1 text-white/40">III</span></li>
         <li><a href="#series" className="hover:text-orange-400">SERIES</a> <span className="ml-1 text-white/40">IV</span></li>
       </ul>
     </aside>

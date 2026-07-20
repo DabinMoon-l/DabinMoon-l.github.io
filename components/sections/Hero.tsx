@@ -163,7 +163,7 @@ export default function Hero() {
             <ul className="mx-auto mt-6 max-w-[250px] space-y-1.5 text-left text-[0.72rem] font-bold tracking-[0.2em] text-white/90">
               <li className="flex justify-between"><a href="#naruto" className="hover:text-orange-400">NARUTO</a><span className="text-white/40">I</span></li>
               <li className="flex justify-between"><a href="#movies" className="hover:text-orange-400">CINEMA</a><span className="text-white/40">II</span></li>
-              <li className="flex justify-between"><a href="#people" className="hover:text-orange-400">PEOPLE &amp; MUSIC</a><span className="text-white/40">III</span></li>
+              <li className="flex justify-between"><a href="#people" className="hover:text-orange-400">PEOPLE</a><span className="text-white/40">III</span></li>
               <li className="flex justify-between"><a href="#series" className="hover:text-orange-400">SERIES</a><span className="text-white/40">IV</span></li>
             </ul>
             <p className="mt-7 text-[0.66rem] font-bold tracking-[0.18em] text-white/70">

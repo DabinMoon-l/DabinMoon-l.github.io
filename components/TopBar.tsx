@@ -9,7 +9,7 @@ export default function TopBar() {
           </span>
           <nav className="hidden gap-6 text-[0.76rem] font-bold text-white/80 md:flex">
             <a href="#naruto" className="hover:text-white">Chapters</a>
-            <a href="#people" className="hover:text-white">Music</a>
+            <a href="#people" className="hover:text-white">People</a>
             <a href="#series" className="hover:text-white">Series</a>
           </nav>
         </div>
