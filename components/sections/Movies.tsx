@@ -30,16 +30,16 @@ export default function Movies() {
         </p>
       </div>
 
-      {/* 2-2. 어메이징 스파이더맨 — 노을 대교 + 거미줄 I LOVE YOU (풀블리드 밴드) */}
+      {/* 2-2. 어메이징 스파이더맨 — 배경 위에 떠 있는 라운드 블록 (레퍼런스의 카드 방식) */}
       <div
         id="spider-stage"
-        className="relative overflow-hidden"
+        className="relative mx-auto my-28 w-[min(94vw,72rem)] overflow-hidden rounded-2xl shadow-[0_50px_100px_-30px_rgba(0,0,0,0.7)]"
         style={{
           background:
             "linear-gradient(to bottom, #2b1055 0%, #7b2a6b 30%, #e2543e 62%, #f5a35c 82%, #2b1055 100%)",
         }}
       >
-        <div className="flex min-h-[130svh] flex-col items-center px-6 pt-28">
+        <div className="flex min-h-[120svh] flex-col items-center px-6 pt-24">
           <p className="chapter-tag" data-reveal>
             The Amazing Spider-Man — my favorite film
           </p>
