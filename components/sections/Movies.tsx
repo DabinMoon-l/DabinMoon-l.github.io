@@ -1,6 +1,10 @@
+import { Caveat } from "next/font/google";
 import ChapterShell from "@/components/ChapterShell";
 import Figure from "@/components/Figure";
 import BgImage from "@/components/BgImage";
+
+// 거미줄 손글씨 전용 서체 (영화 속 웹 글씨 느낌 — 이 SVG에서만 사용)
+const webScript = Caveat({ weight: "700", subsets: ["latin"] });
 
 /** Chapter II — 영화: 고정 배경(cinema-bg) 위로 시라트 SHOCK + 스파이더맨 대교 밴드 */
 export default function Movies() {
@@ -8,7 +12,6 @@ export default function Movies() {
     <ChapterShell
       id="movies"
       bg="cinema-bg"
-      tag="Chapter II"
       title="Cinema"
       fallback="bg-gradient-to-b from-[#1c1c22] via-[#4a3521] to-[#2b2118]"
     >
@@ -66,23 +69,35 @@ export default function Movies() {
             watch it happen. Keep scrolling.
           </p>
 
-          {/* 거미줄 글씨 오버레이 — 스틸 위에서 스크롤에 따라 그려진다 */}
+          {/* 거미줄 글씨 오버레이 — 손글씨 서체 + 왜곡 필터로 진짜 거미줄처럼 */}
           <svg
             viewBox="0 0 1440 420"
             className="mt-10 w-full max-w-6xl"
-            aria-label="I LOVE YOU drawn in webs over the movie still"
+            aria-label="I love you drawn in webs over the movie still"
           >
-            <line x1="380" y1="0" x2="432" y2="150" stroke="#fff" strokeWidth="1.2" opacity="0.55" />
-            <line x1="1060" y1="0" x2="1008" y2="150" stroke="#fff" strokeWidth="1.2" opacity="0.55" />
-            <text
-              x="720"
-              y="260"
-              textAnchor="middle"
-              fontSize="150"
-              className="web-text"
-            >
-              I LOVE YOU
-            </text>
+            <defs>
+              {/* 거미줄 특유의 울퉁불퉁한 유기적 왜곡 */}
+              <filter id="webby" x="-10%" y="-10%" width="120%" height="120%">
+                <feTurbulence type="turbulence" baseFrequency="0.011 0.028" numOctaves="2" seed="7" result="n" />
+                <feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G" />
+              </filter>
+            </defs>
+            <g filter="url(#webby)">
+              {/* 글씨를 매달고 있는 거미줄 가닥 */}
+              <line x1="330" y1="0" x2="405" y2="165" stroke="#fff" strokeWidth="2" opacity="0.6" />
+              <line x1="1110" y1="0" x2="1035" y2="165" stroke="#fff" strokeWidth="2" opacity="0.6" />
+              <line x1="720" y1="0" x2="720" y2="95" stroke="#fff" strokeWidth="1.5" opacity="0.45" />
+              <text
+                x="720"
+                y="285"
+                textAnchor="middle"
+                fontSize="230"
+                transform="rotate(-2 720 285)"
+                className={`web-text ${webScript.className}`}
+              >
+                I love you
+              </text>
+            </g>
           </svg>
         </div>
       </div>

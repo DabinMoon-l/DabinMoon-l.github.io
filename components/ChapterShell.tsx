@@ -12,7 +12,6 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 export default function ChapterShell({
   id,
   bg,
-  tag,
   title,
   fallback,
   decor,
@@ -21,7 +20,6 @@ export default function ChapterShell({
 }: {
   id: string;
   bg: string;
-  tag: string;
   title: ReactNode;
   fallback: string;
   decor?: ReactNode;
@@ -77,10 +75,7 @@ export default function ChapterShell({
       {/* 배경 위로 올라오는 콘텐츠 */}
       <div className="relative z-10 -mt-[100svh]">
         <div className="flex h-svh flex-col items-center justify-center px-6 text-center">
-          <p className="chapter-tag" data-reveal>
-            {tag}
-          </p>
-          <h2 className="chapter-title display mt-6 text-[16vw] leading-none text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
+          <h2 className="chapter-title display text-[16vw] leading-none text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
             {title}
           </h2>
         </div>

@@ -7,7 +7,6 @@ export default function People() {
     <ChapterShell
       id="people"
       bg="people-bg"
-      tag="Chapter III"
       title="People"
       fallback="bg-gradient-to-b from-[#2b1055] via-[#0d0d12] to-[#04302b]"
     >

@@ -7,7 +7,6 @@ export default function Series() {
     <ChapterShell
       id="series"
       bg="series-bg"
-      tag="Chapter IV"
       title="Series"
       fallback="bg-gradient-to-b from-[#0d1210] via-[#141210] to-[#0a0808]"
     >

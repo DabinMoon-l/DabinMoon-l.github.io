@@ -119,17 +119,16 @@ body {
   100% { transform: translate(3px, 2px); }
 }
 
-/* ---------- 스파이더맨 거미줄 글씨 ---------- */
+/* ---------- 스파이더맨 거미줄 글씨 (손글씨 + 반투명 웹 질감) ---------- */
 .web-text {
-  font-family: var(--font-display), sans-serif;
-  fill: none;
-  stroke: #ffffff;
-  stroke-width: 2.4;
+  fill: rgba(255, 255, 255, 0.14);
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 3.5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 2600;
   stroke-dashoffset: 2600;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
+  paint-order: stroke fill;
 }
 
 /* ---------- 중경삼림 스텝 프린팅 (잔상) ---------- */

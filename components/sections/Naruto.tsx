@@ -8,7 +8,6 @@ export default function Naruto() {
     <ChapterShell
       id="naruto"
       bg="naruto-bg"
-      tag="Chapter I"
       title="Naruto"
       torn={false}
       fallback="bg-gradient-to-b from-[#2a1506] via-[#3a1d08] to-[#170b03]"
