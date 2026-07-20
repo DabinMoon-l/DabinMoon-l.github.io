@@ -20,66 +20,76 @@ export default function Naruto() {
         </>
       }
     >
-      {/* 1-1. 이루카 & 나루토 — 중앙 정렬, 누끼 이미지 */}
+      {/* 1-1. 나루토 & 이루카 — 캐릭터 프로필 (기술 칩) */}
       <div className="flex min-h-svh flex-col items-center justify-center px-6 py-28 text-center">
         <p className="chapter-tag" data-reveal>
-          Iruka &amp; Naruto
+          The Hidden Leaf
         </p>
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
-          Ramen &amp; Warmth
+          Naruto &amp; Iruka
         </h3>
-        <p className="mt-4 text-lg font-bold text-orange-300" data-reveal>
-          The first one who believed.
-        </p>
         <div className="mt-10 w-full max-w-md" data-parallax="0.12">
-          <Figure name="naruto-iruka" label="Iruka & Naruto — cutout PNG" ratio="4 / 3" />
+          <Figure name="naruto-iruka" label="Naruto & Iruka — cutout PNG" ratio="4 / 3" />
         </div>
-        <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
-          Everyone looked away from the boy — except one teacher, who simply sat
-          down and shared a bowl of ramen. This scene taught me what caring for
-          someone really means. A single word of recognition can change a life.
-        </p>
+        <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-orange-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-orange-200">
+            <span className="h-2 w-2 rounded-full bg-orange-400" />JUTSU · RASENGAN
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-orange-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-orange-200">
+            <span className="h-2 w-2 rounded-full bg-orange-400" />JUTSU · SHADOW CLONE
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-orange-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-orange-200">
+            <span className="h-2 w-2 rounded-full bg-orange-400" />NINE-TAILS CHAKRA
+          </span>
+        </div>
       </div>
 
-      {/* 1-2. 사스케 & 이타치 */}
+      {/* 1-2. 사스케 & 이타치 — 캐릭터 프로필 */}
       <div className="flex min-h-svh flex-col items-center justify-center px-6 py-28 text-center">
         <p className="chapter-tag" data-reveal>
-          Sasuke &amp; Itachi
+          The Uchiha Brothers
         </p>
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
-          Silent Love
+          Sasuke &amp; Itachi
         </h3>
-        <p className="mt-4 text-lg font-bold text-indigo-300" data-reveal>
-          Love that never says its name.
-        </p>
         <div className="mt-10 w-full max-w-md" data-parallax="0.16">
           <Figure name="sasuke-itachi" label="Sasuke & Itachi — cutout PNG" ratio="4 / 3" />
         </div>
-        <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
-          A single poke on the forehead, carrying everything left unsaid.
-          These brothers showed me that clumsy love is still love —
-          and honestly, I&#39;m probably that type too.
-        </p>
+        <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-indigo-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-indigo-200">
+            <span className="h-2 w-2 rounded-full bg-indigo-400" />JUTSU · CHIDORI
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-indigo-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-indigo-200">
+            <span className="h-2 w-2 rounded-full bg-indigo-400" />SHARINGAN · AMATERASU
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-indigo-400/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-indigo-200">
+            <span className="h-2 w-2 rounded-full bg-indigo-400" />GENJUTSU · TSUKUYOMI
+          </span>
+        </div>
       </div>
 
-      {/* 1-3. 카카시 혼자 */}
+      {/* 1-3. 카카시 — 캐릭터 프로필 */}
       <div className="flex min-h-svh flex-col items-center justify-center px-6 py-28 text-center">
         <p className="chapter-tag" data-reveal>
-          Kakashi — Solo
+          The Copy Ninja
         </p>
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
-          Alone, But Cool
+          Kakashi
         </h3>
-        <p className="mt-4 text-lg font-bold text-slate-300" data-reveal>
-          Always reading alone. Haha.
-        </p>
         <div className="mt-10 w-full max-w-sm" data-parallax="0.1">
           <Figure name="kakashi" label="Kakashi — cutout PNG" ratio="3 / 4" />
         </div>
-        <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
-          Kakashi is always off to the side with his book. I have my own quiet
-          obsessions too — and that&#39;s exactly what comes next.
-        </p>
+        <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-slate-300/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-slate-200">
+            <span className="h-2 w-2 rounded-full bg-slate-300" />JUTSU · LIGHTNING BLADE
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-slate-300/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-slate-200">
+            <span className="h-2 w-2 rounded-full bg-slate-300" />1,000 JUTSU COPIED
+          </span>
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-slate-300/50 bg-black/30 px-4 py-2 text-[0.7rem] font-bold tracking-[0.18em] text-slate-200">
+            <span className="h-2 w-2 rounded-full bg-slate-300" />MANGEKYO · KAMUI
+          </span>
+        </div>
       </div>
     </ChapterShell>
   );
