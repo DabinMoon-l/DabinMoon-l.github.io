@@ -7,10 +7,10 @@ export default function People() {
       {/* 챕터 인트로 */}
       <div className="flex min-h-[50svh] flex-col items-center justify-center bg-[#2b1055] px-6 text-center">
         <p className="chapter-tag" data-reveal>
-          Chapter 3 — People &amp; Music
+          Chapter III — People &amp; Music
         </p>
         <h2 className="brush mt-6 text-6xl text-white md:text-8xl" data-reveal>
-          좋아하는 사람들
+          People I love
         </h2>
       </div>
 
@@ -34,16 +34,16 @@ export default function People() {
               Up Roses
             </h3>
             <p className="brush mt-4 text-4xl text-rose-500" data-reveal>
-              나의 최애곡
+              my favorite song of all
             </p>
             <p className="mt-6 max-w-md text-sm leading-loose text-neutral-700" data-reveal>
-              영원하지 않아도 특별할 수 있다는 노래.
-              앨범 전체가 신나게 달리다가 이 곡에서 잠깐 숨을 고르는데,
-              나는 그 순간이 제일 좋다.
+              A song about how something doesn&#39;t have to last forever to be
+              special. The whole album runs and dances — then pauses to breathe
+              right here. That pause is my favorite moment.
             </p>
           </div>
           <div data-parallax="0.12">
-            <Figure name="harry" label="해리 스타일스" ratio="4 / 5" className="rotate-2" />
+            <Figure name="harry" label="Harry Styles" ratio="4 / 5" className="rotate-2" />
           </div>
         </div>
       </div>
@@ -60,15 +60,15 @@ export default function People() {
             Sunghoon
           </h3>
           <p className="mt-6 max-w-md text-sm leading-loose text-white/70" data-reveal>
-            No Doubt 뮤비 착장의 그 분위기.
-            수트와 스트릿 사이 어딘가, 여름밤의 로맨스 같은 곡.
+            That No Doubt music-video styling — somewhere between a sharp suit
+            and streetwear, like a summer-night romance.
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             <div data-parallax="0.1">
-              <Figure name="jay" label="제이 — No Doubt 착장" ratio="3 / 4" className="-rotate-1" />
+              <Figure name="jay" label="Jay — No Doubt MV look" ratio="3 / 4" className="-rotate-1" />
             </div>
             <div className="md:mt-16" data-parallax="0.18">
-              <Figure name="sunghoon" label="성훈 — No Doubt 착장" ratio="3 / 4" className="rotate-1" />
+              <Figure name="sunghoon" label="Sunghoon — No Doubt MV look" ratio="3 / 4" className="rotate-1" />
             </div>
           </div>
         </div>
@@ -88,16 +88,16 @@ export default function People() {
               金城武
             </h3>
             <p className="brush mt-4 text-4xl text-teal-300" data-reveal>
-              중경삼림의 금성무
+              Chungking Express, 1994
             </p>
             <p className="mt-6 max-w-md text-sm leading-loose text-white/70" data-reveal>
-              흔들리는 카메라, 번지는 네온, 유통기한이 적힌 파인애플 통조림.
-              왕가위의 잔상 속에서 뛰던 그 시절의 금성무가 제일 멋있다.
-              (이 글씨의 잔상 효과가 바로 그 느낌이다.)
+              Shaky cameras, smeared neon, canned pineapple with an expiry date.
+              Kaneshiro running through Wong Kar-wai&#39;s blur is the coolest
+              thing ever filmed. (This flickering title is that exact feeling.)
             </p>
           </div>
           <div className="md:order-1" data-parallax="0.15">
-            <Figure name="kaneshiro" label="금성무 — 중경삼림 시절" ratio="4 / 5" />
+            <Figure name="kaneshiro" label="Takeshi Kaneshiro — Chungking Express era" ratio="4 / 5" />
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function Figure({
       ) : (
         <div className="placeholder">
           <span>{label}</span>
-          <code>public/assets/{name}.png 에 이미지를 넣어주세요</code>
+          <code>add image → public/assets/{name}.png</code>
         </div>
       )}
     </div>

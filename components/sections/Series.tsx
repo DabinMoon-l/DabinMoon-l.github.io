@@ -7,10 +7,10 @@ export default function Series() {
       {/* 챕터 인트로 */}
       <div className="flex min-h-[50svh] flex-col items-center justify-center bg-[#04302b] px-6 text-center">
         <p className="chapter-tag" data-reveal>
-          Chapter 4 — Series
+          Chapter IV — Series
         </p>
         <h2 className="brush mt-6 text-6xl text-white md:text-8xl" data-reveal>
-          밤을 새우게 한 것들
+          Up all night
         </h2>
       </div>
 
@@ -32,11 +32,11 @@ export default function Series() {
             Of The...
           </h3>
           <p className="mt-6 max-w-sm text-sm leading-loose text-white/70" data-reveal>
-            잿빛 버밍엄, 시가 연기, 그리고 토미 셸비의 눈빛.
-            분위기라는 게 뭔지 처음부터 끝까지 보여주는 시리즈.
+            Grey Birmingham, cigar smoke, and Tommy Shelby&#39;s stare.
+            A series that is pure atmosphere from the first frame to the last.
           </p>
           <div className="mt-10 max-w-sm" data-parallax="0.1">
-            <Figure name="peaky" label="피키 블라인더스" ratio="16 / 10" />
+            <Figure name="peaky" label="Peaky Blinders" ratio="16 / 10" />
           </div>
         </div>
 
@@ -56,11 +56,11 @@ export default function Series() {
             &amp; Fear
           </h3>
           <p className="mt-6 max-w-sm text-sm leading-loose text-white/70" data-reveal>
-            촛불 하나로 이렇게 무서울 수 있다니.
-            믿음과 두려움에 대해 이렇게까지 깊게 파고드는 호러는 처음이었다.
+            Who knew a single candle could be this terrifying.
+            No horror has ever dug this deep into faith and fear.
           </p>
           <div className="mt-10 max-w-sm" data-parallax="0.14">
-            <Figure name="midnightmass" label="어둠 속의 미사" ratio="16 / 10" />
+            <Figure name="midnightmass" label="Midnight Mass" ratio="16 / 10" />
           </div>
         </div>
       </div>

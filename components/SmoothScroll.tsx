@@ -20,7 +20,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
     const lenis = new Lenis({ lerp: 0.09 });
     lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
+    const tick = (time: number) => lenis.raf(time * 1000);
+    gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
     const ctx = gsap.context(() => {
@@ -87,6 +88,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     });
 
     return () => {
+      gsap.ticker.remove(tick);
       ctx.revert();
       lenis.destroy();
     };

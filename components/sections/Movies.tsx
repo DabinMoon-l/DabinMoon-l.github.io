@@ -7,30 +7,30 @@ export default function Movies() {
       {/* 챕터 인트로 */}
       <div className="flex min-h-[50svh] flex-col items-center justify-center bg-[#1c1c22] px-6 text-center">
         <p className="chapter-tag" data-reveal>
-          Chapter 2 — Cinema
+          Chapter II — Cinema
         </p>
         <h2 className="brush mt-6 text-6xl text-white md:text-8xl" data-reveal>
-          스크린이 남긴 것
+          What the screen left behind
         </h2>
       </div>
 
       {/* 2-1. 시라트 — SHOCK */}
       <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-gradient-to-b from-[#1c1c22] via-[#4a3521] to-[#6b4a26] px-6 py-24 text-center">
         <p className="chapter-tag" data-reveal>
-          Sirât — 가장 최근에 본, 가장 충격적인 영화
+          Sirât — the most shocking film I have ever seen
         </p>
         <h3 className="shock-text display mt-8 text-[24vw] text-white md:text-[15rem]">
           Shock
         </h3>
         <div className="mt-10 grid w-full max-w-3xl items-center gap-8 md:grid-cols-[1fr_1.2fr]">
           <div data-parallax="0.12">
-            <Figure name="sirat" label="시라트 (Sirât) 포스터/스틸" ratio="2 / 3" />
+            <Figure name="sirat" label="Sirât — poster / still" ratio="2 / 3" />
           </div>
           <p className="text-left text-sm leading-loose text-white/80" data-reveal>
-            사막 한복판의 레이브, 그리고 그 뒤에 이어지는 것들.
-            보고 나서 한동안 아무 말도 못 했다.
-            좋아한다고는 말 못 하겠다. 근데 잊을 수도 없다.
-            영화가 사람을 이렇게까지 흔들 수 있다는 걸 알려준 작품.
+            A rave in the middle of the desert, and everything that follows.
+            I couldn&#39;t say a word after the credits rolled.
+            I can&#39;t say I liked it — but I can&#39;t forget it either.
+            The film that proved cinema can shake you this hard.
           </p>
         </div>
       </div>
@@ -46,19 +46,19 @@ export default function Movies() {
       >
         <div className="flex min-h-[130svh] flex-col items-center px-6 pt-28">
           <p className="chapter-tag" data-reveal>
-            The Amazing Spider-Man — 제일 좋아하는 영화
+            The Amazing Spider-Man — my favorite film
           </p>
           <p className="mt-4 max-w-md text-center text-sm leading-loose text-white/85" data-reveal>
-            앤드류 가필드의 스파이더맨.
-            노을 진 다리 위에 거미줄로 마음을 적던 그 장면을,
-            이 페이지에 그대로 담았다. 스크롤을 내려보면.
+            Andrew Garfield&#39;s Spider-Man.
+            That bridge at sunset, a heart written in webs —
+            recreated right here. Keep scrolling.
           </p>
 
           {/* 노을 + 다리 실루엣 + 거미줄 글씨 */}
           <svg
             viewBox="0 0 1440 640"
             className="mt-6 w-full max-w-6xl"
-            aria-label="노을 지는 대교 위에 거미줄로 그려지는 I LOVE YOU"
+            aria-label="I LOVE YOU drawn in webs over a bridge at sunset"
           >
             {/* 태양 */}
             <circle cx="720" cy="330" r="90" fill="#ffd9a0" opacity="0.9" />
@@ -121,7 +121,7 @@ export default function Movies() {
           </svg>
 
           <div className="mb-28 mt-4 w-full max-w-xs" data-reveal>
-            <Figure name="spiderman" label="어메이징 스파이더맨 스틸 (선택)" ratio="16 / 9" />
+            <Figure name="spiderman" label="The Amazing Spider-Man still (optional)" ratio="16 / 9" />
           </div>
         </div>
       </div>
