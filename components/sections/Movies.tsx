@@ -11,7 +11,7 @@ export default function Movies() {
       title="Cinema"
       fallback="bg-gradient-to-b from-[#1c1c22] via-[#4a3521] to-[#2b2118]"
     >
-      {/* 2-1. 시라트 — SHOCK */}
+      {/* 2-1. 시라트 — SHOCK (중앙 정렬) */}
       <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
         <p className="chapter-tag" data-reveal>
           Sirât — the most shocking film I have ever seen
@@ -19,17 +19,15 @@ export default function Movies() {
         <h3 className="shock-text display mt-8 text-[24vw] text-white md:text-[15rem]">
           Shock
         </h3>
-        <div className="mt-10 grid w-full max-w-3xl items-center gap-8 md:grid-cols-[1fr_1.2fr]">
-          <div data-parallax="0.12">
-            <Figure name="sirat" label="Sirât — poster / still" ratio="2 / 3" />
-          </div>
-          <p className="text-left text-sm leading-loose text-white/85" data-reveal>
-            A rave in the middle of the desert, and everything that follows.
-            I couldn&#39;t say a word after the credits rolled.
-            I can&#39;t say I liked it — but I can&#39;t forget it either.
-            The film that proved cinema can shake you this hard.
-          </p>
+        <div className="mt-10 w-full max-w-xs" data-parallax="0.12">
+          <Figure name="sirat" label="Sirât — poster" ratio="2 / 3" />
         </div>
+        <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
+          A rave in the middle of the desert, and everything that follows.
+          I couldn&#39;t say a word after the credits rolled.
+          I can&#39;t say I liked it — but I can&#39;t forget it either.
+          The film that proved cinema can shake you this hard.
+        </p>
       </div>
 
       {/* 2-2. 어메이징 스파이더맨 — 노을 대교 + 거미줄 I LOVE YOU (풀블리드 밴드) */}
@@ -45,7 +43,7 @@ export default function Movies() {
           <p className="chapter-tag" data-reveal>
             The Amazing Spider-Man — my favorite film
           </p>
-          <p className="mt-4 max-w-md text-center text-sm leading-loose text-white/85" data-reveal>
+          <p className="mt-4 max-w-md text-center text-base font-medium leading-relaxed text-white/90" data-reveal>
             Andrew Garfield&#39;s Spider-Man.
             That bridge at sunset, a heart written in webs —
             recreated right here. Keep scrolling.

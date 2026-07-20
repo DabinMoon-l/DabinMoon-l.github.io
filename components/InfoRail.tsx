@@ -1,11 +1,11 @@
 /**
  * 왼쪽 하단 고정 인적사항 레일 (레퍼런스의 고정 챕터 인덱스 자리).
- * 스크롤과 무관하게 항상 떠 있다. mix-blend-difference로 밝은 섹션에서도 보임.
+ * 레퍼런스처럼 좌측에 넉넉한 여백을 두고, 굵은 글씨로.
  */
 export default function InfoRail() {
   return (
-    <aside className="pointer-events-none fixed bottom-6 left-6 z-50 hidden select-none mix-blend-difference md:block">
-      <ul className="space-y-0.5 text-[0.6rem] leading-relaxed tracking-[0.16em] text-white/75">
+    <aside className="pointer-events-none fixed bottom-10 left-10 z-50 hidden select-none mix-blend-difference md:block xl:left-16">
+      <ul className="space-y-1 text-[0.7rem] font-bold leading-relaxed tracking-[0.14em] text-white/85">
         <li className="text-white">MOON DABIN</li>
         <li>BORN 2004.01.01</li>
         <li className="pointer-events-auto">
@@ -22,11 +22,11 @@ export default function InfoRail() {
         <li>HEIGHT · JUST UNDER 190</li>
         <li>WEIGHT · OVER 2KG</li>
       </ul>
-      <ul className="pointer-events-auto mt-4 space-y-0.5 text-[0.6rem] tracking-[0.16em] text-white/60">
-        <li><a href="#naruto" className="hover:text-orange-400">NARUTO</a> <span className="ml-1 text-white/35">I</span></li>
-        <li><a href="#movies" className="hover:text-orange-400">CINEMA</a> <span className="ml-1 text-white/35">II</span></li>
-        <li><a href="#people" className="hover:text-orange-400">PEOPLE &amp; MUSIC</a> <span className="ml-1 text-white/35">III</span></li>
-        <li><a href="#series" className="hover:text-orange-400">SERIES</a> <span className="ml-1 text-white/35">IV</span></li>
+      <ul className="pointer-events-auto mt-5 space-y-1 text-[0.7rem] font-bold tracking-[0.14em] text-white/70">
+        <li><a href="#naruto" className="hover:text-orange-400">NARUTO</a> <span className="ml-1 text-white/40">I</span></li>
+        <li><a href="#movies" className="hover:text-orange-400">CINEMA</a> <span className="ml-1 text-white/40">II</span></li>
+        <li><a href="#people" className="hover:text-orange-400">PEOPLE &amp; MUSIC</a> <span className="ml-1 text-white/40">III</span></li>
+        <li><a href="#series" className="hover:text-orange-400">SERIES</a> <span className="ml-1 text-white/40">IV</span></li>
       </ul>
     </aside>
   );

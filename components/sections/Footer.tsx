@@ -9,8 +9,8 @@ export default function Footer() {
         <br />
         Around
       </p>
-      <p className="brush mt-6 text-4xl text-orange-400" data-reveal>
-        dattebayo
+      <p className="mt-6 text-lg font-bold tracking-[0.3em] text-orange-400" data-reveal>
+        DATTEBAYO
       </p>
 
       {/* 크레딧 — 만든 사람들 */}
@@ -25,7 +25,7 @@ export default function Footer() {
           >
             Claude Code
           </a>{" "}
-          <span className="brush text-orange-400">&amp;</span> Me
+          <span className="text-orange-400">&amp;</span> Me
         </p>
       </div>
 
@@ -46,8 +46,8 @@ export default function Footer() {
         </p>
       </div>
 
-      <p className="mt-12 text-[0.68rem] tracking-[0.22em] text-white/45" data-reveal>
-        MOON DABIN · EST. 2004.01.01 · THE NARUTO EDITION — 2026
+      <p className="mt-12 text-[0.7rem] font-bold tracking-[0.22em] text-white/50" data-reveal>
+        MOON DABIN · EST. 2004.01.01 · EDITIONS WINTER &#39;26
       </p>
     </footer>
   );

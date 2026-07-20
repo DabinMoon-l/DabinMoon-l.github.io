@@ -88,7 +88,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
         }
       });
 
-      // 챕터 연출 — 배경 줌 / 오버레이 다크닝 / 타이틀 등장·퇴장
+      // 챕터 연출 — 배경 줌 / 오버레이 다크닝 / 타이틀 등장·퇴장 / 끝부분 흑백화
       gsap.utils.toArray<HTMLElement>(".chapter").forEach((sec) => {
         const bgEl = sec.querySelector(".chapter-bg");
         if (bgEl) {
@@ -99,6 +99,16 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
               scale: 1.12,
               ease: "none",
               scrollTrigger: { trigger: sec, start: "top bottom", end: "bottom top", scrub: true },
+            }
+          );
+          // 챕터가 끝나갈 때 배경이 흑백으로 바랜다 (찢어진 전환의 전조)
+          gsap.fromTo(
+            bgEl,
+            { filter: "grayscale(0)" },
+            {
+              filter: "grayscale(1)",
+              ease: "none",
+              scrollTrigger: { trigger: sec, start: "bottom 140%", end: "bottom 70%", scrub: true },
             }
           );
         }

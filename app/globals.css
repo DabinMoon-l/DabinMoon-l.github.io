@@ -2,17 +2,11 @@
 
 :root {
   --ink: #0b0b0e;
-  --cream: #f3ece2;
   --naruto: #f97316; /* 주황 */
-  --sunset-1: #2b1055;
-  --sunset-2: #7597de;
-  --rose: #e8b4bc;
-  --neon: #2dd4bf;
 }
 
 @theme inline {
   --color-ink: var(--ink);
-  --color-cream: var(--cream);
   --color-naruto: var(--naruto);
 }
 
@@ -24,10 +18,11 @@ body {
   background: var(--ink);
   color: #f5f5f4;
   font-family: var(--font-body), sans-serif;
+  font-weight: 500;
   overflow-x: hidden;
 }
 
-/* ---------- 타이포 ---------- */
+/* ---------- 타이포 (Archivo Black + Noto Sans 두 가지로 통일) ---------- */
 .display {
   font-family: var(--font-display), sans-serif;
   text-transform: uppercase;
@@ -35,36 +30,34 @@ body {
   line-height: 0.92;
 }
 
-.brush {
-  font-family: var(--font-brush), cursive;
-  line-height: 1.1;
-}
-
-/* 챕터 라벨 (레퍼런스의 작은 크레딧 글씨 스타일) */
+/* 챕터 라벨 */
 .chapter-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.7);
 }
 .chapter-tag::before {
   content: "";
   width: 2.5rem;
-  height: 1px;
+  height: 2px;
   background: currentColor;
   opacity: 0.6;
 }
 
-/* ---------- 이미지 자리 (플레이스홀더) ---------- */
+/* ---------- 이미지 (누끼/컷아웃 스타일 — 프레임 없음) ---------- */
 .figure {
   position: relative;
-  overflow: hidden;
-  border-radius: 0.75rem;
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+.figure img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.55));
 }
 .figure .placeholder {
   position: absolute;
@@ -74,36 +67,28 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  border: 1.5px dashed rgba(255, 255, 255, 0.3);
   border-radius: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.82rem;
+  font-weight: 700;
   text-align: center;
   padding: 1rem;
 }
 .figure .placeholder code {
   font-size: 0.65rem;
+  font-weight: 400;
   opacity: 0.6;
 }
 
-/* ---------- 필름 그레인 (전체 오버레이) ---------- */
+/* ---------- 필름 그레인 (정적 — 깜빡임 방지를 위해 애니메이션 없음) ---------- */
 .grain {
   position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.05;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain-move 0.9s steps(4) infinite;
-}
-@keyframes grain-move {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-2%, 1%); }
-  50% { transform: translate(1%, -2%); }
-  75% { transform: translate(-1%, 2%); }
-  100% { transform: translate(0, 0); }
 }
 
 /* ---------- 스크롤 진행 바 ---------- */
@@ -136,10 +121,10 @@ body {
 
 /* ---------- 스파이더맨 거미줄 글씨 ---------- */
 .web-text {
-  font-family: var(--font-brush), cursive;
+  font-family: var(--font-display), sans-serif;
   fill: none;
   stroke: #ffffff;
-  stroke-width: 2.2;
+  stroke-width: 2.4;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 2600;
@@ -162,7 +147,7 @@ body {
 }
 .stepprint::before {
   transform: translate(-8px, 3px);
-  color: var(--neon);
+  color: #2dd4bf;
   animation: ck-step 1.4s steps(6) infinite reverse;
 }
 .stepprint::after {
@@ -177,7 +162,7 @@ body {
   100% { transform: translate(0, 0); }
 }
 
-/* ---------- 촛불 플리커 (어둠 속의 미사) ---------- */
+/* ---------- 촛불 플리커 ---------- */
 .candle {
   animation: candle-flicker 3.2s ease-in-out infinite;
 }
@@ -188,7 +173,7 @@ body {
   70% { opacity: 0.95; }
 }
 
-/* ---------- 떠다니는 파티클 (나뭇잎/꽃잎) ---------- */
+/* ---------- 떠다니는 파티클 ---------- */
 .float-slow { animation: floaty 7s ease-in-out infinite; }
 .float-mid { animation: floaty 5s ease-in-out infinite 1s; }
 .float-fast { animation: floaty 4s ease-in-out infinite 0.5s; }
@@ -197,47 +182,49 @@ body {
   50% { transform: translateY(-22px) rotate(6deg); }
 }
 
-/* ---------- 나선환 (라센간) ---------- */
-.rasengan-wrap {
-  opacity: 0;
-  transform: scale(0.4);
-  will-change: transform, opacity;
-}
-.rasengan {
-  position: relative;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 42% 38%,
-    #ffffff 0%,
-    #cfe9ff 16%,
-    #60a5fa 42%,
-    #1d4ed8 68%,
-    rgba(10, 20, 60, 0) 71%
-  );
-  box-shadow:
-    0 0 60px 18px rgba(96, 165, 250, 0.6),
-    0 0 160px 60px rgba(59, 130, 246, 0.35);
-}
-.rasengan::before,
-.rasengan::after {
-  content: "";
+/* ---------- 수리검 회전 ---------- */
+.spin-slow { animation: rasengan-spin 12s linear infinite; }
+
+/* ---------- 나선환 링 (태풍의 눈 포탈 가장자리) ----------
+   1600px 대형 요소를 scale로 줄여서 쓰기 때문에 확대해도 깨지지 않는다 */
+.rasengan-ring {
   position: absolute;
-  inset: 6%;
-  border-radius: 46% 54% 52% 48% / 51% 47% 53% 49%;
-  border: 3px solid rgba(255, 255, 255, 0.65);
-  filter: blur(1px);
-  animation: rasengan-spin 0.9s linear infinite;
+  left: 50%;
+  top: 50%;
+  width: 1600px;
+  height: 1600px;
+  border-radius: 50%;
+  opacity: 0;
+  will-change: transform, opacity;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      closest-side,
+      transparent 58%,
+      rgba(147, 197, 253, 0.25) 64%,
+      rgba(59, 130, 246, 0.85) 72%,
+      rgba(191, 219, 254, 0.95) 79%,
+      rgba(29, 78, 216, 0.8) 86%,
+      rgba(13, 27, 72, 0) 93%
+    ),
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      rgba(255, 255, 255, 0.55) 40deg,
+      transparent 95deg,
+      rgba(255, 255, 255, 0.4) 160deg,
+      transparent 225deg,
+      rgba(255, 255, 255, 0.5) 300deg,
+      transparent 360deg
+    );
+  -webkit-mask: radial-gradient(closest-side, transparent 56%, black 64%, black 92%, transparent 97%);
+  mask: radial-gradient(closest-side, transparent 56%, black 64%, black 92%, transparent 97%);
+  animation: ring-spin 1.1s linear infinite;
+  filter: blur(1.5px) saturate(1.25) drop-shadow(0 0 40px rgba(96, 165, 250, 0.5));
 }
-.rasengan::after {
-  inset: 16%;
-  border-width: 2px;
-  border-color: rgba(191, 219, 254, 0.8);
-  animation: rasengan-spin 0.6s linear infinite reverse;
-}
-@keyframes rasengan-spin {
-  to { transform: rotate(360deg); }
+@keyframes ring-spin {
+  from { transform: translate(-50%, -50%) scale(var(--ring-scale, 0.001)) rotate(0deg); }
+  to { transform: translate(-50%, -50%) scale(var(--ring-scale, 0.001)) rotate(360deg); }
 }
 
 ::selection {

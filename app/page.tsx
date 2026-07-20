@@ -1,4 +1,5 @@
 import SmoothScroll from "@/components/SmoothScroll";
+import TopBar from "@/components/TopBar";
 import InfoRail from "@/components/InfoRail";
 import Hero from "@/components/sections/Hero";
 import Naruto from "@/components/sections/Naruto";
@@ -10,6 +11,7 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <SmoothScroll>
+      <TopBar />
       <InfoRail />
       <main>
         <Hero />
