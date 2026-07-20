@@ -1,26 +1,203 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #0b0b0e;
+  --cream: #f3ece2;
+  --naruto: #f97316; /* 주황 */
+  --sunset-1: #2b1055;
+  --sunset-2: #7597de;
+  --rose: #e8b4bc;
+  --neon: #2dd4bf;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-naruto: var(--naruto);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: #f5f5f4;
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---------- 타이포 ---------- */
+.display {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+.brush {
+  font-family: var(--font-brush), cursive;
+  line-height: 1.1;
+}
+
+/* 챕터 라벨 (레퍼런스의 작은 크레딧 글씨 스타일) */
+.chapter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+.chapter-tag::before {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* ---------- 이미지 자리 (플레이스홀더) ---------- */
+.figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+}
+.figure .placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+.figure .placeholder code {
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+/* ---------- 필름 그레인 (전체 오버레이) ---------- */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-move 0.9s steps(4) infinite;
+}
+@keyframes grain-move {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1%); }
+  50% { transform: translate(1%, -2%); }
+  75% { transform: translate(-1%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- 스크롤 진행 바 ---------- */
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--naruto);
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 70;
+}
+
+/* ---------- SHOCK (시라트) ---------- */
+.shock-text {
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.35);
+}
+.shock-live {
+  animation: shock-jitter 0.35s steps(2) infinite;
+}
+@keyframes shock-jitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-3px, 2px); }
+  50% { transform: translate(2px, -3px); }
+  75% { transform: translate(-2px, -2px); }
+  100% { transform: translate(3px, 2px); }
+}
+
+/* ---------- 스파이더맨 거미줄 글씨 ---------- */
+.web-text {
+  font-family: var(--font-brush), cursive;
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.55));
+}
+
+/* ---------- 중경삼림 스텝 프린팅 (잔상) ---------- */
+.stepprint {
+  position: relative;
+  animation: ck-step 1.4s steps(6) infinite;
+}
+.stepprint::before,
+.stepprint::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  filter: blur(6px);
+}
+.stepprint::before {
+  transform: translate(-8px, 3px);
+  color: var(--neon);
+  animation: ck-step 1.4s steps(6) infinite reverse;
+}
+.stepprint::after {
+  transform: translate(8px, -3px);
+  color: #f472b6;
+  animation: ck-step 1.8s steps(5) infinite;
+}
+@keyframes ck-step {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-4px, 2px); }
+  66% { transform: translate(3px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ---------- 촛불 플리커 (어둠 속의 미사) ---------- */
+.candle {
+  animation: candle-flicker 3.2s ease-in-out infinite;
+}
+@keyframes candle-flicker {
+  0%, 100% { opacity: 0.85; }
+  20% { opacity: 1; }
+  45% { opacity: 0.7; }
+  70% { opacity: 0.95; }
+}
+
+/* ---------- 떠다니는 파티클 (나뭇잎/꽃잎) ---------- */
+.float-slow { animation: floaty 7s ease-in-out infinite; }
+.float-mid { animation: floaty 5s ease-in-out infinite 1s; }
+.float-fast { animation: floaty 4s ease-in-out infinite 0.5s; }
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(6deg); }
+}
+
+::selection {
+  background: var(--naruto);
+  color: #fff;
 }
