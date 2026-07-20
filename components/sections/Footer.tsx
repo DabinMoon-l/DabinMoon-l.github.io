@@ -17,18 +17,15 @@ export default function Footer() {
       <div className="mt-16 w-full max-w-md border-t border-white/15 pt-10" data-reveal>
         <p className="text-[0.62rem] tracking-[0.3em] text-white/45">CREATED BY</p>
         <p className="display mt-4 text-2xl text-white">
-          Moon Dabin <span className="brush text-orange-400">&amp;</span> Claude
-        </p>
-        <p className="mt-3 text-[0.68rem] leading-relaxed tracking-[0.18em] text-white/55">
-          ME AND YOU — BUILT TOGETHER WITH{" "}
           <a
             href="https://claude.com/claude-code"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline underline-offset-2 hover:text-orange-400"
+            className="hover:text-orange-400"
           >
-            CLAUDE CODE
-          </a>
+            Claude Code
+          </a>{" "}
+          <span className="brush text-orange-400">&amp;</span> Me
         </p>
       </div>
 
