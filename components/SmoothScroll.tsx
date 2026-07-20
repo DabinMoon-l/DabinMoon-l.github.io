@@ -124,27 +124,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
             }
           );
         }
-        const title = sec.querySelector(".chapter-title");
-        if (title) {
-          gsap.fromTo(
-            title,
-            { scale: 0.9, opacity: 0, y: 70 },
-            {
-              scale: 1,
-              opacity: 1,
-              y: 0,
-              duration: 1.1,
-              ease: "power3.out",
-              scrollTrigger: { trigger: sec, start: "top 65%" },
-            }
-          );
-          gsap.to(title, {
-            yPercent: -35,
-            opacity: 0,
-            ease: "none",
-            scrollTrigger: { trigger: sec, start: "top top", end: "+=70%", scrub: true },
-          });
-        }
+        // 챕터 타이틀은 별도 연출 없음 — 일반 콘텐츠처럼 스크롤과 함께 자연스럽게 올라간다
       });
 
       // 콜라주 조각 드리프트 — 스크롤 따라 위아래로 흐르며 회전
