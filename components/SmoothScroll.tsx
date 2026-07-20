@@ -58,6 +58,107 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
         });
       });
 
+      // 이미지 커튼 리빌 — 아래에서 걷히듯 등장
+      gsap.utils.toArray<HTMLElement>(".figure").forEach((fig) => {
+        gsap.fromTo(
+          fig,
+          { clipPath: "inset(100% 0% 0% 0%)", y: 70, scale: 1.06 },
+          {
+            clipPath: "inset(0% 0% 0% 0%)",
+            y: 0,
+            scale: 1,
+            duration: 1.3,
+            ease: "power3.out",
+            scrollTrigger: { trigger: fig, start: "top 88%" },
+          }
+        );
+        // 내부 이미지는 스크롤 내내 천천히 줌/이동 (켄 번즈)
+        const img = fig.querySelector("img");
+        if (img) {
+          gsap.fromTo(
+            img,
+            { scale: 1.28, yPercent: -7 },
+            {
+              scale: 1.02,
+              yPercent: 7,
+              ease: "none",
+              scrollTrigger: { trigger: fig, start: "top bottom", end: "bottom top", scrub: true },
+            }
+          );
+        }
+      });
+
+      // 챕터 연출 — 배경 줌 / 오버레이 다크닝 / 타이틀 등장·퇴장
+      gsap.utils.toArray<HTMLElement>(".chapter").forEach((sec) => {
+        const bgEl = sec.querySelector(".chapter-bg");
+        if (bgEl) {
+          gsap.fromTo(
+            bgEl,
+            { scale: 1 },
+            {
+              scale: 1.12,
+              ease: "none",
+              scrollTrigger: { trigger: sec, start: "top bottom", end: "bottom top", scrub: true },
+            }
+          );
+        }
+        const overlay = sec.querySelector(".chapter-overlay");
+        if (overlay) {
+          gsap.fromTo(
+            overlay,
+            { opacity: 0 },
+            {
+              opacity: 0.68,
+              ease: "none",
+              scrollTrigger: { trigger: sec, start: "top top", end: "+=90%", scrub: true },
+            }
+          );
+        }
+        const title = sec.querySelector(".chapter-title");
+        if (title) {
+          gsap.fromTo(
+            title,
+            { scale: 0.9, opacity: 0, y: 70 },
+            {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+              duration: 1.1,
+              ease: "power3.out",
+              scrollTrigger: { trigger: sec, start: "top 65%" },
+            }
+          );
+          gsap.to(title, {
+            yPercent: -35,
+            opacity: 0,
+            ease: "none",
+            scrollTrigger: { trigger: sec, start: "top top", end: "+=70%", scrub: true },
+          });
+        }
+      });
+
+      // 콜라주 조각 드리프트 — 스크롤 따라 위아래로 흐르며 회전
+      // data-float="세기", data-rot="회전각"
+      gsap.utils.toArray<HTMLElement>("[data-float]").forEach((el) => {
+        const amp = parseFloat(el.dataset.float || "1");
+        const rot = parseFloat(el.dataset.rot || "0");
+        gsap.fromTo(
+          el,
+          { y: 90 * amp, rotation: -rot },
+          {
+            y: -90 * amp,
+            rotation: rot,
+            ease: "none",
+            scrollTrigger: {
+              trigger: el.parentElement,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+          }
+        );
+      });
+
       // 시라트 — SHOCK 쾅 하고 등장 후 계속 떨림
       const shock = document.querySelector<HTMLElement>(".shock-text");
       if (shock) {
