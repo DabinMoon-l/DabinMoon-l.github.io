@@ -18,7 +18,7 @@ export default function InfoRail() {
             CHRISTIAN COLLEGE OF NURSING
           </a>
         </li>
-        <li>NURSING · CLASS D · 25010423</li>
+        <li>NURSING · 25010423</li>
         <li>HEIGHT · JUST UNDER 190</li>
         <li>WEIGHT · OVER 2KG</li>
       </ul>
