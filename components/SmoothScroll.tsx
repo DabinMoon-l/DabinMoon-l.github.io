@@ -12,7 +12,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
  * - data-parallax="0.2": 스크롤 속도차(패럴랙스). 값이 클수록 많이 움직임
  * - #progress: 상단 주황 진행 바
  * - .shock-text: 시라트 SHOCK 등장 연출
- * - .web-text: 스파이더맨 거미줄 글씨 그리기 (스크롤 연동)
  */
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -98,7 +97,13 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
             {
               scale: 1.12,
               ease: "none",
-              scrollTrigger: { trigger: sec, start: "top bottom", end: "bottom top", scrub: true },
+              scrollTrigger: {
+                trigger: sec,
+                // 포탈로 진입하는 챕터는 히어로 포탈 배경(scale 1)과 이어지도록 stuck 시점부터 줌 시작
+                start: sec.hasAttribute("data-portal-entry") ? "top top" : "top bottom",
+                end: "bottom top",
+                scrub: true,
+              },
             }
           );
           // 챕터가 끝나갈 때 배경이 흑백으로 바랜다 (찢어진 전환의 전조)
@@ -120,7 +125,13 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
             {
               opacity: 0.68,
               ease: "none",
-              scrollTrigger: { trigger: sec, start: "top top", end: "+=90%", scrub: true },
+              scrollTrigger: {
+                trigger: sec,
+                // 포탈 진입 챕터는 구멍 너머 세계가 밝게 보이도록, 콘텐츠가 도착할 무렵부터 어두워진다
+                start: sec.hasAttribute("data-portal-entry") ? "top -100%" : "top top",
+                end: "+=90%",
+                scrub: true,
+              },
             }
           );
         }
@@ -159,21 +170,6 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
           ease: "power4.in",
           scrollTrigger: { trigger: shock, start: "top 75%" },
           onComplete: () => shock.classList.add("shock-live"),
-        });
-      }
-
-      // 스파이더맨 — 스크롤할수록 거미줄이 I LOVE YOU를 그림
-      const web = document.querySelector<SVGTextElement>(".web-text");
-      if (web) {
-        gsap.to(web, {
-          strokeDashoffset: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#spider-stage",
-            start: "top 70%",
-            end: "bottom 90%",
-            scrub: 0.5,
-          },
         });
       }
     });

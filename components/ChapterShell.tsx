@@ -16,6 +16,8 @@ export default function ChapterShell({
   fallback,
   decor,
   torn = true,
+  titleScreen = true,
+  className = "",
   children,
 }: {
   id: string;
@@ -24,6 +26,10 @@ export default function ChapterShell({
   fallback: string;
   decor?: ReactNode;
   torn?: boolean;
+  /** false면 챕터 첫 화면(거대 타이틀 풀스크린)을 생략 (예: 히어로 포탈이 타이틀 역할을 하는 나루토) */
+  titleScreen?: boolean;
+  /** 섹션에 추가할 클래스 (예: 히어로 핀 아래로 당겨 넣는 -mt-[100svh]) */
+  className?: string;
   children: ReactNode;
 }) {
   const candidates = [`/assets/${bg}.png`, `/assets/${bg}.jpg`, `/assets/${bg}.webp`];
@@ -36,7 +42,11 @@ export default function ChapterShell({
   }, [idx]);
 
   return (
-    <section id={id} className="chapter relative">
+    <section
+      id={id}
+      className={`chapter relative ${className}`}
+      data-portal-entry={titleScreen ? undefined : ""}
+    >
       {/* 찢어진 종이 가장자리 — 이전 챕터를 덮으며 진입 */}
       {torn && (
         <svg
@@ -74,11 +84,20 @@ export default function ChapterShell({
 
       {/* 배경 위로 올라오는 콘텐츠 */}
       <div className="relative z-10 -mt-[100svh]">
-        <div className="flex h-svh flex-col items-center justify-center px-6 text-center">
-          <h2 className="chapter-title display text-[16vw] leading-none text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
-            {title}
-          </h2>
-        </div>
+        {titleScreen ? (
+          <div className="flex h-svh flex-col items-center justify-center px-6 text-center">
+            <h2 className="chapter-title display text-[16vw] leading-none text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
+              {title}
+            </h2>
+          </div>
+        ) : (
+          <>
+            <h2 className="sr-only">{title}</h2>
+            {/* 포탈 진입 스페이서 — 히어로 핀 거리(+=170%)와 같은 높이.
+                포탈이 다 열리는 순간 첫 콘텐츠 블록이 화면에 도착해 있도록 한다 */}
+            <div aria-hidden className="h-[170svh]" />
+          </>
+        )}
         {children}
       </div>
     </section>

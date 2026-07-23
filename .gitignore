@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# 브라우저로 저장한 페이지 사본 (로컬 참고용)
+sirat.html
+sirat_files/

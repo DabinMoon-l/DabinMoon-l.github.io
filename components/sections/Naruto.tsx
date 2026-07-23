@@ -2,7 +2,11 @@ import ChapterShell from "@/components/ChapterShell";
 import Figure from "@/components/Figure";
 import { Shuriken, Kunai, Leaf } from "@/components/deco";
 
-/** Chapter I — 나루토 (히어로 포탈로 진입하므로 찢어진 전환 없음) */
+/**
+ * Chapter I — 나루토
+ * 히어로 포탈이 타이틀 화면 역할: 섹션을 히어로 핀 아래로 당겨 넣어(-mt)
+ * 포탈이 다 열리는 순간 이 챕터의 고정 배경이 이어받는다 (배경 이음새 없음)
+ */
 export default function Naruto() {
   return (
     <ChapterShell
@@ -10,6 +14,8 @@ export default function Naruto() {
       bg="naruto-bg"
       title="Naruto"
       torn={false}
+      titleScreen={false}
+      className="-mt-[100svh]"
       fallback="bg-gradient-to-b from-[#2a1506] via-[#3a1d08] to-[#170b03]"
       decor={
         <>
@@ -28,7 +34,7 @@ export default function Naruto() {
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
           Naruto &amp; Iruka
         </h3>
-        <div className="mt-10 w-full max-w-md" data-parallax="0.12">
+        <div className="mt-10 w-full max-w-xl" data-parallax="0.12">
           <Figure name="naruto-iruka" label="Naruto & Iruka — cutout PNG" ratio="4 / 3" />
         </div>
         <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>
@@ -52,7 +58,7 @@ export default function Naruto() {
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
           Sasuke &amp; Itachi
         </h3>
-        <div className="mt-10 w-full max-w-md" data-parallax="0.16">
+        <div className="mt-10 w-full max-w-xl" data-parallax="0.16">
           <Figure name="sasuke-itachi" label="Sasuke & Itachi — cutout PNG" ratio="4 / 3" />
         </div>
         <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>
@@ -76,7 +82,7 @@ export default function Naruto() {
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
           Kakashi
         </h3>
-        <div className="mt-10 w-full max-w-sm" data-parallax="0.1">
+        <div className="mt-10 w-full max-w-lg" data-parallax="0.1">
           <Figure name="kakashi" label="Kakashi — cutout PNG" ratio="3 / 4" />
         </div>
         <div className="mt-8 flex max-w-xl flex-wrap items-center justify-center gap-3" data-reveal>

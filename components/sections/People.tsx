@@ -24,7 +24,7 @@ export default function People() {
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
           Harry Styles
         </h3>
-        <div className="mt-10 w-full max-w-sm" data-parallax="0.12">
+        <div className="mt-10 w-full max-w-lg" data-parallax="0.12">
           <Figure name="harry" label="Harry Styles — cutout PNG" ratio="3 / 4" />
         </div>
         <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
@@ -43,18 +43,18 @@ export default function People() {
         </div>
       </div>
 
-      {/* 3-2. 엔하이픈 제이 & 성훈 — No Doubt */}
+      {/* 3-2. 엔하이픈 제이 & 성훈 */}
       <div className="flex min-h-svh flex-col items-center justify-center px-6 py-28 text-center">
         <p className="chapter-tag" data-reveal>
-          Enhypen — No Doubt
+          Enhypen
         </p>
         <h3 className="display mt-5 text-5xl text-white md:text-7xl" data-reveal>
           Jay &amp; Sunghoon
         </h3>
         <p className="mt-4 text-lg font-bold text-sky-300" data-reveal>
-          That No Doubt music-video styling.
+          No concept, no theme — just the photos I love.
         </p>
-        <div className="mt-12 grid w-full max-w-2xl grid-cols-2 items-end gap-6">
+        <div className="mt-12 grid w-full max-w-4xl grid-cols-2 items-end gap-6">
           <div data-parallax="0.1">
             <Figure name="jay" label="Jay — cutout PNG" ratio="3 / 4" />
           </div>
@@ -63,8 +63,8 @@ export default function People() {
           </div>
         </div>
         <p className="mt-8 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>
-          Somewhere between a sharp suit and streetwear,
-          like a summer-night romance.
+          My two favorites — these are simply the shots
+          I keep coming back to.
         </p>
       </div>
 
@@ -82,7 +82,7 @@ export default function People() {
         <p className="mt-4 text-lg font-bold text-teal-300" data-reveal>
           Running through Wong Kar-wai&#39;s blur.
         </p>
-        <div className="mt-10 w-full max-w-sm" data-parallax="0.14">
+        <div className="mt-10 w-full max-w-lg" data-parallax="0.14">
           <Figure name="kaneshiro" label="Takeshi Kaneshiro — cutout PNG" ratio="3 / 4" />
         </div>
         <p className="mt-10 max-w-xl text-base font-medium leading-relaxed text-white/90" data-reveal>

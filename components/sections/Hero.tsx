@@ -5,30 +5,29 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const BG = ["/assets/hero-bg.png", "/assets/hero-bg.jpg", "/assets/hero-bg.webp"];
-const PORTAL_BG = ["/assets/naruto-bg.png", "/assets/naruto-bg.jpg", "/assets/naruto-bg.webp"];
 
 /**
  * 히어로 — 태풍의 눈 포탈 전환:
  * 스크롤하면 화면 중앙에 나선환 링이 나타나고, 링 안쪽(태풍의 눈)이 뚫리면서
- * 그 구멍으로 다음 챕터(Naruto)의 세계가 보인다. 스크롤할수록 구멍이 커져
- * 화면 전체가 다음 섹션으로 바뀐다. (첫 전환에만 사용)
+ * 그 구멍으로 다음 챕터(Naruto)가 보인다. 구멍으로 보이는 것은 별도 미리보기가
+ * 아니라 "실제 Chapter I 섹션 그 자체"다:
+ * - Naruto 섹션이 -mt-[100svh]로 히어로 뒤(z-20 아래)에 깔려 있고
+ * - 핀은 pinSpacing: false — 히어로는 자기 높이(100svh)만 차지한 채 화면에 고정되며,
+ *   그동안 스크롤은 뒤에 깔린 나루토 챕터를 실제로 진행시킨다.
+ * 구멍이 화면을 다 삼키면 히어로는 이미 다 지나간 상태라 그대로 사라지고,
+ * 화면에는 처음부터 뒤에 있던 1챕터만 남는다 — 같은 화면이 두 번 나오거나
+ * 배경이 둘로 갈라지는 구간이 없다.
  */
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const bgImgRef = useRef<HTMLImageElement>(null);
-  const portalImgRef = useRef<HTMLImageElement>(null);
   const [bgIdx, setBgIdx] = useState(0);
-  const [portalIdx, setPortalIdx] = useState(0);
 
   // 하이드레이션 전에 로딩 실패한 이미지 폴백
   useEffect(() => {
     const img = bgImgRef.current;
     if (img && img.complete && img.naturalWidth === 0) setBgIdx((i) => i + 1);
   }, [bgIdx]);
-  useEffect(() => {
-    const img = portalImgRef.current;
-    if (img && img.complete && img.naturalWidth === 0) setPortalIdx((i) => i + 1);
-  }, [portalIdx]);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -58,9 +57,10 @@ export default function Hero() {
         scrollTrigger: {
           trigger: ref.current,
           start: "top top",
-          end: "+=170%",
+          end: "+=170%", // ⚠ ChapterShell의 포탈 진입 스페이서(h-[170svh])와 맞물린 값
           scrub: 0.4,
           pin: true,
+          pinSpacing: false, // 스페이서 없음 — 핀 동안 스크롤이 뒤에 깔린 나루토 챕터를 진행시킨다
           anticipatePin: 1,
         },
       });
@@ -68,10 +68,12 @@ export default function Hero() {
         .to(ring, { opacity: 1, duration: 0.15 }, 0.25)
         // 눈이 뜨인다 — 작은 구멍
         .to(hole, { r: 110, duration: 0.35, ease: "power2.out", onUpdate: apply }, 0.25)
-        // 포탈 속 세계가 서서히 다가옴
+        // 포탈 속 타이틀이 서서히 다가옴
         .fromTo(".hero-portal", { scale: 1.18 }, { scale: 1, duration: 1.7, ease: "power2.out" }, 0.3)
         // 구멍이 화면을 다 삼킬 때까지 확장
         .to(hole, { r: maxR, duration: 1.5, ease: "power2.in", onUpdate: apply }, 0.75)
+        // 타이틀·링은 구멍이 다 열리기 전에 흩어진다 — 핀 해제 순간 아무것도 남지 않도록
+        .to(".hero-portal", { opacity: 0, duration: 0.3, ease: "power1.in" }, 1.85)
         .to(ring, { opacity: 0, duration: 0.2 }, 2.05);
     }, ref);
 
@@ -92,27 +94,13 @@ export default function Hero() {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-svh overflow-hidden bg-ink">
-      {/* ── 포탈 뒤 세계 (다음 챕터의 미리보기) ── */}
-      <div className="hero-portal absolute inset-0">
-        {portalIdx < PORTAL_BG.length ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            ref={portalImgRef}
-            src={PORTAL_BG[portalIdx]}
-            alt=""
-            onError={() => setPortalIdx((i) => i + 1)}
-            className="h-full w-full object-cover"
-          />
-        ) : (
-          <div className="h-full w-full bg-gradient-to-b from-[#2a1506] via-[#3a1d08] to-[#170b03]" />
-        )}
-        <div className="absolute inset-0 bg-black/25" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="display text-[16vw] text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
-            Naruto
-          </span>
-        </div>
+    // bg 없음 — 마스크로 뚫린 자리에는 뒤에 깔린 Naruto 챕터가 그대로 보여야 한다
+    <section ref={ref} className="relative z-20 h-svh overflow-hidden">
+      {/* ── 포탈 타이틀 — 구멍 너머로 보이는 챕터 제목 (배경은 실제 나루토 섹션) ── */}
+      <div className="hero-portal pointer-events-none absolute inset-0 flex items-center justify-center">
+        <span className="display text-[16vw] text-white drop-shadow-[0_8px_40px_rgba(0,0,0,0.5)] md:text-[10rem]">
+          Naruto
+        </span>
       </div>
 
       {/* ── 앞면 (마스크로 가운데가 뚫리는 레이어) ── */}
