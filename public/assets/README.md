@@ -8,8 +8,8 @@
 | `hero-bg` | ⭐ 첫 화면 풀스크린 배경 | 가장 중요! 나루토 일러스트/콜라주 대형 이미지 (가로 1920px 이상) |
 | `naruto-bg` | ⭐ Chapter I 고정 배경 | 나루토 풍경/일러스트 (가로 1920px 이상) |
 | `cinema-bg` | ⭐ Chapter II 고정 배경 | 영화적인 분위기 이미지 |
-| `people-bg` | ⭐ Chapter III 고정 배경 | 콘서트/네온 등 분위기 이미지 |
-| `series-bg` | ⭐ Chapter IV 고정 배경 | 어두운 분위기 이미지 |
+| `people-bg` | ⭐ Chapter III 고정 배경 | 세피아 톤 인물 일러스트 (적용됨) |
+| `series-bg` | ⭐ Chapter IV 고정 배경 | 미드나잇 미사 × 피키 블라인더스 일러스트 (적용됨) |
 | `naruto-iruka` | 이루카 & 나루토 | 일락 라멘 같이 먹는 장면 |
 | `sasuke-itachi` | 사스케 & 이타치 | 이마 콩 장면 |
 | `kakashi` | 카카시 혼자 | 책 읽는 장면 |
